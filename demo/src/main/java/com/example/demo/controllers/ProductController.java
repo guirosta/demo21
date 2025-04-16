@@ -44,12 +44,12 @@ public class ProductController {
     }
 
     // PUT Update product
-    @PutMapping("/id")
+    @PutMapping("/{id}")
     public Product updateProduct(@PathVariable long id, @RequestBody Product product) {
         // Recherche du produit désiré
         Product produitExistant = productRepository
                 .findById(id).orElseThrow(() -> new RuntimeException("Ce produit n'existe pas"));
-        // Mise à des jours des attribites du produit
+        // Mise à des jours des attributs du produit
         produitExistant.setName(product.getName());
         produitExistant.setDescription((product.getDescription()));
         produitExistant.setPrice(product.getPrice());
