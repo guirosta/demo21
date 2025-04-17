@@ -54,13 +54,14 @@ public class ProductController {
         produitExistant.setName(product.getName());
         produitExistant.setDescription((product.getDescription()));
         produitExistant.setPrice(product.getPrice());
+        produitExistant.setImage(product.getImage());
 
         return productRepository.save(produitExistant);
 
     }
 
     // DELETE product
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public void deleteProduct (@PathVariable long id) {
         productRepository.deleteById(id);
 

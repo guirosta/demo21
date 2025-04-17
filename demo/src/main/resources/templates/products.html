@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Les Luminaires</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+  </head>
+  <body>
+    <h1>Les Luminaires</h1>
+    <p>La décoration de votre quotidien</p>
+
+    <ul>
+      <li th:each="product: ${products}">
+        <img
+          th:src="@{'/images/' + ${product.image}}"
+          th:alt="'Image de ' + ${product.name}"
+          width="200"
+          height="200"
+        />
+
+        <strong th:text="${product.name}"></strong>
+        <span th:text="${product.description}"></span>
+        <em th:text="${product.price} +'€'"></em>
+      </li>
+    </ul>
+  </body>
+</html>

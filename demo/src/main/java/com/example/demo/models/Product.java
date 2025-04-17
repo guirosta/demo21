@@ -14,16 +14,18 @@ public class Product {
     private String name;
     private String description;
     private double price;
+    private String image;
 
     // constructeurs
     public Product() {
 
     }
 
-    public Product(String name, String description, double price) {
+    public Product(String name, String description, double price, String image) {
         this.name = name;
         this.description = description;
         this.price = price;
+        this.image = image;
 
     }
 
@@ -85,4 +87,12 @@ public class Product {
         this.price = price;
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+
+        this.image = image;
+    }
 }
