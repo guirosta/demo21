@@ -7,7 +7,7 @@
     <link rel="stylesheet" th:href="@{/css/style.css}" />
   </head>
   <body>
-    <h1>Les Luminaires</h1>
+    <h1>Luminescence</h1>
     <p>La décoration de votre quotidien</p>
 
     <ul>
@@ -19,7 +19,9 @@
           height="200"
         />
 
-        <strong th:text="${product.name}"></strong>
+        <a th:href="@{'/products/' + ${product.id}}">
+          <strong th:text="${product.name}"></strong
+        ></a>
         <span th:text="${product.description}"></span>
         <em th:text="${product.price} +'€'"></em>
       </li>
