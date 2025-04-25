@@ -1,11 +1,14 @@
+
+ /* === Styles pour la page product === */
+
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin: 40px;
-    background-color: #61a7b5;
+    background-color: #55747a;
     color: #2e2e2e;
   }
   
-  h1, p {
+  .products h1, .products p {
     text-align: center;
     color: #f1f1f1; /* bleu pétrole */
   }
@@ -52,4 +55,54 @@ body {
     color: #3d3d3d;
     font-weight: bold;
   }
+
+  a{
+    text-decoration: none;
+  }
+
+  /* === Styles pour la page product-details === */
+
+.product-details {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #f7f4f0;
+  color: #2c2c2c;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+}
+
+.product-details img {
+  width: 300px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.product-details h1 {
+  color: #0f4c5c;
+}
+
+.product-details p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.product-details strong {
+  color: #6b4226;
+}
+
+a.back-link {
+  text-decoration: none;
+  color: #0f4c5c;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  display: inline-block;
+}
+
+a.back-link:hover {
+  text-decoration: underline;
+}
+
   
