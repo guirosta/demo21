@@ -6,9 +6,10 @@
     <title>Les Luminaires</title>
     <link rel="stylesheet" th:href="@{/css/style.css}" />
   </head>
-  <body class = "products">
-    <h1 >Luminescence</h1>
+  <body class="products">
+    <h1>Luminescence</h1>
     <p>La décoration de votre quotidien</p>
+    <a th:href="@{/products/new}">Ajouter un produit</a>
 
     <ul>
       <li th:each="product: ${products}">

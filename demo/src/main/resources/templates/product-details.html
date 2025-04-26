@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="product-details">
-      <a th:href="@{/products}">Retour</a>
+      <a th:href="@{/products}" class="back-link">Retour</a>
 
       <h1 th:text="${product.name}"></h1>
       <img th:src="@{'/images/' + ${product.image}}" alt="" width="100" />
