@@ -1,75 +1,77 @@
-
- /* === Styles pour la page product === */
+/* === Styles pour la page products === */
 
 body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin: 40px;
-    background-color: #55747a;
-    color: #2e2e2e;
-  }
-  
-  .products h1, .products p {
-    text-align: center;
-    color: #f1f1f1; /* bleu pétrole */
-  }
-  
-  ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    padding: 0;
-    list-style-type: none;
-    margin-top: 40px;
-  }
-  
-  li {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-  
-  li:hover {
-    transform: translateY(-5px);
-  }
-  
-  img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  }
-  
-  strong {
-    display: block;
-    font-size: 1.1rem;
-    color: #274c5e; /* bleu pétrole */
-    margin-bottom: 8px;
-  }
-  
-  em {
-    color: #3d3d3d;
-    font-weight: bold;
-  }
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  margin: 40px;
+  background-color: #42707e;
+  color: #2e2e2e;
+}
 
-  a{
-    text-decoration: none;
-  }
+.products h1,
+.products p {
+  text-align: center;
+  color: #f1f1f1; /* bleu pétrole */
+}
 
-  /* === Styles pour la page product-details === */
+ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 0;
+  list-style-type: none;
+  margin-top: 40px;
+}
+
+li {
+  background-color: #ffffff;
+  border: 2px solid #d4af37; /* bordure dorée */
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+li:hover {
+  transform: translateY(-5px);
+}
+
+img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+strong {
+  display: block;
+  font-size: 1.1rem;
+  color: #274c5e; /* bleu pétrole */
+  margin-bottom: 8px;
+}
+
+em {
+  color: #3d3d3d;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* === Styles pour la page product-details === */
 
 .product-details {
   max-width: 800px;
   margin: 0 auto;
+  border: 2px solid #d4af37; /* bordure dorée */
   padding: 2rem;
   background-color: #f7f4f0;
   color: #2c2c2c;
   border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
 }
 
 .product-details img {
@@ -105,4 +107,48 @@ a.back-link:hover {
   text-decoration: underline;
 }
 
-  
+/* === Styles pour la page product-form === */
+
+.product-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.product-form label {
+  display: block;
+  width: 100%;
+  font-weight: bold;
+  color: #34495e;
+  margin-bottom: 5px;
+}
+
+
+.product-form input[type="text"],
+.product-form input[type="number"],
+.product-form input[type="file"],
+.product-form textarea,
+.product-form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccd1d9;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  font-size: 16px;
+}
+
+.product-form button[type="submit"] {
+  grid-column: 2 / 3; /* le bouton est aligné sous les inputs */
+  margin-top: 20px;
+  padding: 8px;
+  background-color: #426780;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+
