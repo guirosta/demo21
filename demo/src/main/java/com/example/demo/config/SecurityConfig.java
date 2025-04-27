@@ -35,8 +35,8 @@ public class SecurityConfig {
     @Bean
     public DaoAuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
-        provider.setUserDetailsService(userDetailsService); // Utilise ton service perso pour charger les utilisateurs
-        provider.setPasswordEncoder(passwordEncoder());
+        provider.setUserDetailsService(userDetailsService); // Utilise le service pour charger les utilisateurs
+        provider.setPasswordEncoder(passwordEncoder()); // Création d'une instance de passwordEncoder pou encodre et valider les mdp
         return provider;
     }
 
