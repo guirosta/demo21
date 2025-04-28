@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
 public class User {
@@ -14,7 +15,18 @@ public class User {
     private String username;
     private String password;
     private String role = "USER";
-      
+
+    // Constructeurss
+    public User() {
+
+    }
+
+    public User(String username, String password, String role) {
+
+        this.username = username;
+        this.password = password;
+        this.role = role;
+    }
 
     /**
      * @return Long return the id
@@ -57,7 +69,6 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-
 
     /**
      * @return String return the role

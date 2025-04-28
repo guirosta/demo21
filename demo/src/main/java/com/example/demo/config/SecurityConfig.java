@@ -36,7 +36,8 @@ public class SecurityConfig {
     public DaoAuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
         provider.setUserDetailsService(userDetailsService); // Utilise le service pour charger les utilisateurs
-        provider.setPasswordEncoder(passwordEncoder()); // Création d'une instance de passwordEncoder pou encodre et valider les mdp
+        provider.setPasswordEncoder(passwordEncoder()); // Création d'une instance de passwordEncoder pou encodre et
+                                                        // valider les mdp
         return provider;
     }
 
@@ -45,6 +46,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
                 .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/login*").permitAll()
                         // Protège l'accès aux pages /admin/** pour les utilisateurs avec rôle "ADMIN"
                         .requestMatchers("/admin/**").hasRole("ADMIN")
                         // Exige une connexion pour accéder à /product-form/**

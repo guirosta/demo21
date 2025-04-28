@@ -12,7 +12,7 @@
       <h1>Ajouter un nouveau produit</h1>
       <form th:action="@{/products}" th:object="${product}" method="post">
         <div>
-          <label>Nom:</label>
+          <label>Nom</label>
           <input type="text" th:field="*{name}" required /><br />
         </div>
         <div>

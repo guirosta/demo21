@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+  lang="en"
+>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,6 +13,8 @@
   <body class="products">
     <h1>Luminescence</h1>
     <p>La décoration de votre quotidien</p>
+
+    <a th:href="@{/login}">Se connecter</a><br>
     <a th:href="@{/products/new}">Ajouter un produit</a>
 
     <ul>
