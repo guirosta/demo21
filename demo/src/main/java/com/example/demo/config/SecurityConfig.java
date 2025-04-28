@@ -46,7 +46,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/login*").permitAll()
+                        .requestMatchers("/login*", "/register").permitAll()
                         // Protège l'accès aux pages /admin/** pour les utilisateurs avec rôle "ADMIN"
                         .requestMatchers("/admin/**").hasRole("ADMIN")
                         // Exige une connexion pour accéder à /product-form/**

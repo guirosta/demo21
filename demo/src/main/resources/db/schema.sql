@@ -6,3 +6,11 @@ CREATE TABLE
         price DECIMAL(10, 2) NOT NULL,
         image VARCHAR(255) NOT NULL
     );
+
+CREATE TABLE
+    IF NOT EXISTS USERS (
+        id BIGINT AUTO_INCREMENT PRIMARY KEY,
+        username VARCHAR(255) NOT NULL UNIQUE,
+        password VARCHAR(255) NOT NULL,
+        role VARCHAR(50) NOT NULL
+    );

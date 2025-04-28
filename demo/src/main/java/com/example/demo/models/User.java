@@ -7,6 +7,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "users") // ici on précise manuellement le nom de la table en DBn 
 public class User {
 
     @Id

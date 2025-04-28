@@ -1,4 +1,5 @@
 package com.example.demo.controllers;
+
 import com.example.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -36,11 +37,17 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public String registerProcess(@ModelAttribute("user") User user) {
+    public String registerProcess(@ModelAttribute("user") User user,
+            @RequestParam("confirmPassword") String confirmPassword, Model model) {
+        if (!user.getPassword().equals(confirmPassword)) {
+            model.addAttribute("error message", "les mots de passe ne correspondent pas.");
+
+            return "register";
+        }
         // sécuriser le mdp
-        user.setPassword(passwordEncoder.encode(user.getPassword())); 
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         // Définir le rôle du membre inscrit
-        user.setRole("USER"); 
+        user.setRole("USER");
         // Sauvegarder dans la db
         userRepository.save(user);
         return "redirect/login";
