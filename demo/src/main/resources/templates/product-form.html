@@ -1,35 +1,43 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="fr" >
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ajouter un produit</title>
-    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
   </head>
   <body>
-    <div class="product-details product-form">
-      <a th:href="@{/products}" class="back-link">Retour</a>
-      <h1>Ajouter un nouveau produit</h1>
-      <form th:action="@{/products}" th:object="${product}" method="post">
-        <div>
-          <label>Nom</label>
-          <input type="text" th:field="*{name}" required /><br />
-        </div>
-        <div>
-          <label>Description</label>
-          <textarea type="text" th:field="*{description}" required></textarea>
-          <br />
-        </div>
-        <div>
-          <label>Prix</label>
-          <input type="number" th:field="*{price}" step="0.01" required /><br />
-        </div>
-        <div>
-          <label>Votre image d'illustration</label>
-          <input type="text" th:field="*{image}" />
-        </div>
-        <button type="submit">Ajouter</button>
-      </form>
-    </div>
+    <div th:replace="fragments/header :: header"></div>
+    <main>
+      <div class="product-details product-form">
+        <a th:href="@{/products}" class="back-link">Retour</a>
+        <h1>Ajouter un nouveau produit</h1>
+        <form th:action="@{/products}" th:object="${product}" method="post">
+          <div>
+            <label>Nom</label>
+            <input type="text" th:field="*{name}" required /><br />
+          </div>
+          <div>
+            <label>Description</label>
+            <textarea type="text" th:field="*{description}" required></textarea>
+            <br />
+          </div>
+          <div>
+            <label>Prix</label>
+            <input
+              type="number"
+              th:field="*{price}"
+              step="0.01"
+              required
+            /><br />
+          </div>
+          <div>
+            <label>Votre image d'illustration</label>
+            <input type="text" th:field="*{image}" />
+          </div>
+          <button type="submit">Ajouter</button>
+        </form>
+      </div>
+    </main>
   </body>
 </html>

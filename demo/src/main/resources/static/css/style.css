@@ -8,10 +8,15 @@ body {
   color: #2e2e2e;
 }
 
-.products h1,
+.products h1 {
+  text-align: center;
+  color: #ffffff;
+  text-shadow: #d4af37 4px 0 10px;
+}
+
 .products p {
   text-align: center;
-  color: #f1f1f1; /* bleu pétrole */
+  color: #ffffff;
 }
 
 ul {
@@ -59,6 +64,10 @@ em {
 
 a {
   text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  
 }
 
 /* === Styles pour la page product-details === */
@@ -123,7 +132,6 @@ a.back-link:hover {
   margin-bottom: 5px;
 }
 
-
 .product-form input[type="text"],
 .product-form input[type="number"],
 .product-form input[type="file"],
@@ -151,4 +159,145 @@ a.back-link:hover {
   transition: background-color 0.3s ease;
 }
 
+/* === Styles pour la page d'inscription === */
 
+.registration-form {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 2rem;
+  background-color: #f7f4f0; /* léger beige pour contraster avec le fond bleu */
+  border: 2px solid #d4af37; /* bordure dorée */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.registration-form h2 {
+  text-align: center;
+  color: #0f4c5c; /* bleu foncé */
+  margin-bottom: 20px;
+}
+
+.registration-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.registration-form label {
+  font-weight: bold;
+  color: #34495e;
+}
+
+.registration-form input[type="text"],
+.registration-form input[type="password"],
+.registration-form input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccd1d9;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  font-size: 16px;
+}
+
+.registration-form button[type="submit"] {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #426780; /* bleu pétrole */
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.registration-form button[type="submit"]:hover {
+  background-color: #2e4e61;
+}
+
+/* Messages d'erreur ou de validation */
+.registration-form .error-message {
+  color: #c0392b;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.registration-form .success-message {
+  color: #27ae60;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* === Styles pour la page de Connexion === */
+
+.login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #f7f4f0;
+  padding: 2rem;
+  border: 2px solid #d4af37; /* bordure dorée */
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+  text-align: center;
+  color: #274c5e;
+  margin-bottom: 20px;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-container label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #34495e;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+  padding: 10px;
+  border: 1px solid #ccd1d9;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  font-size: 16px;
+}
+
+.login-container button[type="submit"] {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #426780;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.login-container button[type="submit"]:hover {
+  background-color: #274c5e; /* bleu plus foncé au survol */
+}
+
+.login-container .error,
+.login-container .logout-success {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #ffe6e6;
+  color: #cc0000;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.login-container .logout-success {
+  background-color: #e6ffe6;
+  color: #2e7d32;
+}

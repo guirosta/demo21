@@ -46,12 +46,12 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
                 .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/h2-console/**").permitAll()
                         .requestMatchers("/login*", "/register").permitAll()
                         // Protège l'accès aux pages /admin/** pour les utilisateurs avec rôle "ADMIN"
                         .requestMatchers("/admin/**").hasRole("ADMIN")
                         // Exige une connexion pour accéder à /product-form/**
                         .requestMatchers("/product-form/**").authenticated()
-                        // Autorise tout le reste (ex: page d'accueil, liste de produits) sans connexion
 
                         .anyRequest().permitAll())
                 .formLogin(form -> form
@@ -61,6 +61,13 @@ public class SecurityConfig {
                         .permitAll()) // Permet à tout le monde d'accéder à la page de login
                 .logout(logout -> logout
                         .permitAll()) // Permet à tout le monde de se déconnecter
+                .csrf(csrf -> csrf
+                        .ignoringRequestMatchers("/h2-console/**") // <== désactiver CSRF pour H2
+                )
+                .headers(headers -> headers
+                        .frameOptions(frameOptions -> frameOptions
+                                .sameOrigin() // <== autoriser frames pour H2
+                        ))
                 .build();
 
     }

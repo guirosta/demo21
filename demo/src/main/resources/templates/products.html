@@ -7,32 +7,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Les Luminaires</title>
+    <title>Luminescence</title>
     <link rel="stylesheet" th:href="@{/css/style.css}" />
   </head>
   <body class="products">
-    <h1>Luminescence</h1>
-    <p>La décoration de votre quotidien</p>
+    <div th:replace="~{fragments/header :: header}"></div>
+    <main>
+      <!-- <h1>Luminescence</h1>
+      <p>Embellir votre quotidien</p> 
 
-    <a th:href="@{/login}">Se connecter</a><br>
-    <a th:href="@{/register}">S'inscrire</a><br>
-    <a th:href="@{/products/new}">Ajouter un produit</a>
+      <a th:href="@{/login}">Se connecter</a><br />
+      <a th:href="@{/register}">S'inscrire</a><br />
+      <a th:href="@{/products/new}">Ajouter un produit</a> -->
 
-    <ul>
-      <li th:each="product: ${products}">
-        <img
-          th:src="@{'/images/' + ${product.image}}"
-          th:alt="'Image de ' + ${product.name}"
-          width="200"
-          height="200"
-        />
+      <ul>
+        <li th:each="product: ${products}">
+          <img
+            th:src="@{'/images/' + ${product.image}}"
+            th:alt="'Image de ' + ${product.name}"
+            width="200"
+            height="200"
+          />
 
-        <a th:href="@{'/products/' + ${product.id}}">
-          <strong th:text="${product.name}"></strong
-        ></a>
-        <span th:text="${product.description}"></span>
-        <em th:text="${product.price} +'€'"></em>
-      </li>
-    </ul>
+          <a th:href="@{'/products/' + ${product.id}}">
+            <strong th:text="${product.name}"></strong
+          ></a>
+          <span th:text="${product.description}"></span>
+          <em th:text="${product.price} +'€'"></em>
+        </li>
+      </ul>
+    </main>
   </body>
 </html>

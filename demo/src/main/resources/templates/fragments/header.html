@@ -1,0 +1,26 @@
+<!-- src/main/resources/templates/fragments/header.html -->
+<div th:fragment="header">
+  <header>
+    <h1>Luminescence</h1>
+    <p>Embellir votre quotidien</p>
+  </header>
+
+  <nav>
+    <!-- Liens visibles quand l'utilisateur n'est pas connecté -->
+    <a sec:authorize="isAnonymous()" th:href="@{/login}">Se connecter</a>
+    <a sec:authorize="isAnonymous()" th:href="@{/register}">S'inscrire</a>
+
+    <!-- Lien vers le profil de l'utilisateur connecté -->
+    <a
+      sec:authorize="isAuthenticated()"
+      th:href="@{/profil}"
+      th:text="${#authentication.name}"
+      >Profil</a
+    >
+
+    <!-- Lien visible seulement pour les ADMIN -->
+    <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/products/new}"
+      >Ajouter un produit</a
+    >
+  </nav>
+</div>
